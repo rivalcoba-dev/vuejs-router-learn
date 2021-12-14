@@ -47,6 +47,8 @@ const routes = [
 ];
 
 const router = new VueRouter({
+  // Creando nombre de link activo
+  linkExactActiveClass: "itgam-link-active-class",
   routes,
 });
 

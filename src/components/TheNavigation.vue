@@ -1,0 +1,33 @@
+<template>
+  <div id="nav">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/brazil">Brazil</router-link> |
+    <router-link to="/panama">Panama</router-link> |
+    <router-link to="/jamaica">Jamaica</router-link> |
+    <router-link to="/hawaii">Hawaii</router-link>
+  </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style scoped="true">
+#nav {
+  display: flex;
+  justify-content: center;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+
+#nav a.itgam-link-active-class {
+  color: coral;
+}
+</style>

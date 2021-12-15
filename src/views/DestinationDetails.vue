@@ -13,11 +13,11 @@
 <script>
 import store from "@/store.js";
 export default {
-  data() {
-    return {
-      // Extraemos de la ruta el parámetro llamado id
-      slug: this.$route.params.slug,
-    };
+  props: {
+    slug: {
+      type: String,
+      required: true,
+    },
   },
   computed: {
     destination() {

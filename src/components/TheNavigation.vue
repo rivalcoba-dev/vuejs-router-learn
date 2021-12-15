@@ -1,21 +1,41 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/brazil">Brazil</router-link> |
-    <router-link to="/panama">Panama</router-link> |
-    <router-link to="/jamaica">Jamaica</router-link> |
-    <router-link to="/hawaii">Hawaii</router-link>
+    <p class="logo">ITGAM APP</p>
+    <ul class="nav-links">
+      <li class="links">
+        <router-link to="/"> Home </router-link>
+      </li>
+      <li
+        class="links"
+        v-for="destination in destinations"
+        :key="destination.name"
+      >
+        <router-link
+          :to="{ name: 'DestinationDetails', params: { id: destination.id } }"
+        >
+          {{ destination.name }}
+        </router-link>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-export default {};
+// Importando los datos
+import store from "@/store.js";
+export default {
+  data() {
+    return {
+      destinationId: this.$route.params.id,
+      destinations: store.destinations,
+    };
+  },
+};
 </script>
 
 <style scoped="true">
 #nav {
   display: flex;
-  justify-content: center;
 }
 
 #nav a {
@@ -29,5 +49,24 @@ export default {};
 
 #nav a.itgam-link-active-class {
   color: coral;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.links {
+  padding-right: 20px;
+  list-style: none;
+}
+
+.links:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  font-size: 20px;
+  color: purple;
+  font-weight: bold;
 }
 </style>

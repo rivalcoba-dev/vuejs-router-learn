@@ -21,6 +21,8 @@ const routes = [
 ];
 
 const router = new VueRouter({
+  // Manejo de las rutas del navegador
+  mode: "history",
   // Creando nombre de link activo
   linkExactActiveClass: "itgam-link-active-class",
   routes,

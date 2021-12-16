@@ -19,6 +19,19 @@ const routes = [
         /* webpackChunkName: "destinationDetails" */ "../views/DestinationDetails.vue"
       ),
     props: true,
+    children: [
+      {
+        // Al ser hijo de DestinationDetails esta ruta representa
+        // /details/:slug/:experienceSlug
+        path: ":experienceSlug",
+        name: "experienceDetails",
+        props: true,
+        component: () =>
+          import(
+            /* webpackChunkName "ExperienceDetails */ "@/views/ExperienceDetails.vue"
+          ),
+      },
+    ],
   },
 ];
 
